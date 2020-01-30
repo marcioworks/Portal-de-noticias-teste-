@@ -1,17 +1,14 @@
 var app = require('./config/server')
 
+var rotaHome = require('./app/routes/home')(app)
+var rotaTecno = require('./app/routes/tecnologia')(app)
+var rotaModa = require('./app/routes/moda')(app)
 
 
-app.get('/',(req,res)=>{
-    res.render('home/index')
-});
-app.get('/tecnologia',(req,res)=>{
-    res.render('section/tecnologia')
-});
-app.get('/moda',(req,res)=>{
-    res.render('section/moda')
-});
 
-app.listen(3000,()=>{
+
+
+
+app.listen(3000, () => {
     console.log('Backend Running(Express)...')
 })
