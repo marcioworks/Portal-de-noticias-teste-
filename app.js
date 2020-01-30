@@ -1,7 +1,6 @@
-const express = require('express')
-const app = express()
+var app = require('./config/server')
 
-app.set('view engine','ejs')
+
 
 app.get('/',(req,res)=>{
     res.render('home/index')
