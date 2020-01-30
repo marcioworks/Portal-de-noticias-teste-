@@ -1,15 +1,16 @@
 const express = require('express')
 const app = express()
 
+app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
-    res.send("<html><body> Portal de Noticias</body></html>")
+    res.render('home/index')
 });
 app.get('/tecnologia',(req,res)=>{
-    res.send("<html><body>Noticias de Tecnologia</body></html>")
+    res.render('section/tecnologia')
 });
 app.get('/moda',(req,res)=>{
-    res.send("<html><body>Noticias de Moda</body></html>")
+    res.render('section/moda')
 });
 
 app.listen(3000,()=>{
