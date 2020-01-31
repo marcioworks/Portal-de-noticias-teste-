@@ -3,7 +3,8 @@ module.exports = (app) => {
 
         const connection = app.config.db();
         const noticiasModel = app.app.models.NoticiasModel;
-       noticiasModel.getNoticia(connection, (erro, result) => {
+        
+        noticiasModel.getNoticia(connection, (erro, result) => {
             res.render('noticias/noticia', { noticia: result });
         });
 

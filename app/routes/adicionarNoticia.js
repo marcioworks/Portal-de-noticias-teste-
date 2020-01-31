@@ -5,6 +5,13 @@ module.exports = (app) => {
 
     app.post('/noticias/salvar', (req, res) => {
         let noticia = req.body;
-        res.send(noticia)
+
+        const connection = app.config.db();
+        const noticiasModel = app.app.models.NoticiasModel;
+        noticiasModel.salvarNoticia(noticia,connection, (erro, result) => {
+           res.redirect('/noticias')
+        });
+
+       
     })
 }
