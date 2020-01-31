@@ -8,6 +8,9 @@ app.set('view engine', 'ejs')
 app.set('views', './app/views')
 
 app.use(bodyparser.urlencoded({extended:true}))
+app.listen(3000, () => {
+    console.log('Backend Running(Express)...')
+})
 
 consign()
     .include('app/routes')
