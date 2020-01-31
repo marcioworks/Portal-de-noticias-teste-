@@ -1,8 +1,11 @@
-var app = require('./config/server')
 
-var rotaHome = require('./app/routes/home')(app)
-var rotaTecno = require('./app/routes/tecnologia')(app)
-var rotaModa = require('./app/routes/moda')(app)
+const app = require('./config/server')
+
+
+const rotaHome = require('./app/routes/home')(app)
+const rotaTecno = require('./app/routes/tecnologia')(app)
+const rotaModa = require('./app/routes/moda')(app)
+const rotaNoticias = require('./app/routes/noticias')(app)
 
 
 
