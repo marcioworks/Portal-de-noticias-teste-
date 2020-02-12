@@ -1,4 +1,4 @@
-module.exports = (app) => {
+module.exports = (application) => {
     app.get('/adicionar', (req, res) => {
         res.render('admin/adicionarNoticia')
     });
@@ -6,9 +6,9 @@ module.exports = (app) => {
     app.post('/noticias/salvar', (req, res) => {
         let noticia = req.body;
 
-        const connection = app.config.db();
-        const noticiasModel = app.app.models.NoticiasModel;
-        noticiasModel.salvarNoticia(noticia,connection, (erro, result) => {
+        const connection = application.config.db();
+        const noticiasModel =  new application.app.models.NoticiasModel(connection);
+        noticiasModel.salvarNoticia(noticia, (erro, result) => {
            res.redirect('/noticias')
         });
 
