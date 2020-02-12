@@ -1,9 +1,9 @@
 module.exports = (application) => {
-    app.get('/adicionar', (req, res) => {
+    application.get('/adicionar', (req, res) => {
         res.render('admin/adicionarNoticia')
     });
 
-    app.post('/noticias/salvar', (req, res) => {
+    application.post('/noticias/salvar', (req, res) => {
         let noticia = req.body;
 
         const connection = application.config.db();

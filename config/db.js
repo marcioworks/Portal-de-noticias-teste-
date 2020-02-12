@@ -1,7 +1,6 @@
 const mysql = require('mysql')
 
 const mySqlConnection = () =>{
-    console.log('conexao com db estabelecia')
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -11,7 +10,7 @@ const mySqlConnection = () =>{
 }
 
 module.exports = () => {
-    console.log('conexao com o bd carregada')
+
    return mySqlConnection;
 }
 
