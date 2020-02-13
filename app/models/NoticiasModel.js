@@ -11,6 +11,7 @@ Noticias.prototype.getNoticia = function(callback) {
 }
 
 Noticias.prototype.salvarNoticia = function (noticia, callback) {
+    
     this._connection.query('insert into noticias set ?', noticia, callback);
 }
 
