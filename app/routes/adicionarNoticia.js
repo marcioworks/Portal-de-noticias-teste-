@@ -13,10 +13,11 @@ module.exports = (application) => {
         req.assert('autor','Autor é obrigatório').notEmpty();
         req.assert('data_noticia','data da noticia é obrigatória').notEmpty();
         req.assert('noticia','Noticia é obrigatório').notEmpty();
+
         const errors = req.validationErrors();
 
         if(errors){
-            res.render('admin/adicionarNoticia');
+            res.render('admin/adicionarNoticia',{validacao: errors});
             return;
         }
 
