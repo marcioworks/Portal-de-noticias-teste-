@@ -1,6 +1,6 @@
 module.exports = (application) => {
     application.get('/adicionar', (req, res) => {
-        res.render('admin/adicionarNoticia')
+        res.render('admin/adicionarNoticia',{validacao : {}, noticia : {}})
     });
 
     application.post('/noticias/salvar', (req, res) => {
@@ -17,7 +17,7 @@ module.exports = (application) => {
         const errors = req.validationErrors();
 
         if(errors){
-            res.render('admin/adicionarNoticia',{validacao: errors});
+            res.render('admin/adicionarNoticia',{validacao: errors, noticia: noticia});
             return;
         }
 
