@@ -24,6 +24,7 @@ module.exports.noticias_salvar = function(application,req,res){
 
         const connection = application.config.db();
         const noticiasModel =  new application.app.models.NoticiasModel(connection);
+        
         noticiasModel.salvarNoticia(noticia, (erro, result) => {
            res.redirect('/noticias')
         });

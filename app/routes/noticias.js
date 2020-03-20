@@ -1,21 +1,11 @@
 module.exports = (application) => {
     application.get('/noticias', (req, res) => {
-
-        const connection = application.config.db();
-        const noticiasModel =  new application.app.models.NoticiasModel(connection);
-        noticiasModel.getNoticias((erro, result) => {
-            res.render('noticias/noticias', { noticias: result });
-        });
+        application.app.controllers.noticias.noticias(application,req,res);
+      
 
     });
     application.get('/noticia', (req, res) => {
-
-        const connection = application.config.db();
-        const noticiasModel = new application.app.models.NoticiasModel(connection);
-
-        noticiasModel.getNoticia((erro, result) => {
-            res.render('noticias/noticia', { noticia: result });
-        });
+        application.app.controllers.noticias.noticia(application,req,res)
 
     });
 }
